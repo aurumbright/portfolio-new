@@ -5,20 +5,52 @@ import React from "react";
 export default function Contact() {
   return (
     <div>
-      <h1>Contact Page</h1>
-      <p>
-        Integer cursus bibendum sem non pretium. Vestibulum in aliquet sem, quis
-        molestie urna. Aliquam semper ultrices varius. Aliquam faucibus sit amet
-        magna a ultrices. Aenean pellentesque placerat lacus imperdiet
-        efficitur. In felis nisl, luctus non ante euismod, tincidunt bibendum
-        mi. In a molestie nisl, eu sodales diam. Nam tincidunt lacus quis magna
-        posuere, eget tristique dui dapibus. Maecenas fermentum elementum
-        faucibus. Quisque nec metus vestibulum, egestas massa eu, sollicitudin
-        ipsum. Nulla facilisi. Sed ut erat ligula. Nam tincidunt nunc in nibh
-        dictum ullamcorper. Class aptent taciti sociosqu ad litora torquent per
-        conubia nostra, per inceptos himenaeos. Etiam ornare rutrum felis at
-        rhoncus. Etiam vel condimentum magna, quis tempor nulla.
-      </p>
+      <h1>Contact</h1>
+      <form>
+        <div className="form-row">
+          <div className="form-group col-md-6">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              className="form-control"
+              id="email"
+              placeholder="Email"
+            />
+          </div>
+          <div className="form-group col-md-6">
+            <label for="name">Name</label>
+            <input
+              type="name"
+              className="form-control"
+              id="name"
+              placeholder="Name"
+            />
+          </div>
+          <div className="form-group">
+            <label for="message">Your message:</label>
+            <textarea className="form-control" id="message" rows="3"></textarea>
+          </div>
+        </div>
+        <button type="submit" className="btn btn-primary">
+          Sign in
+        </button>
+      </form>
+      <ul>
+        <li>
+          <a href="tel:+8588764217">(858) 876-4217</a>
+        </li>
+        <li>
+          <a href="mailto: aurum.elean@gmail.com">Email</a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/eleanor-gold-a1a3b9111/">
+            LinkedIn
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/aurumbright">GitHub</a>
+        </li>
+      </ul>
     </div>
   );
 }
