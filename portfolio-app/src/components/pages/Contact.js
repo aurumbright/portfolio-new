@@ -20,15 +20,15 @@ export default function Contact() {
     } else if (inputType === "message") {
       setMessage(inputValue);
     }
+
+    if (!validateEmail(email)) {
+      setErrorMessage("Email is invalid");
+      return;
+    }
   };
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-
-    if (!validateEmail(email) || !personName || !message) {
-      setErrorMessage("Email or name or message is invalid");
-      return;
-    }
 
     setEmail("");
     setName("");
@@ -48,7 +48,7 @@ export default function Contact() {
                 name="email"
                 type="email"
                 placeholder="Email"
-                onChange={handleInputChange}
+                onBlur={handleInputChange}
                 className="form-control"
               />
             </div>
