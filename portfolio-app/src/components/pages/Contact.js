@@ -9,7 +9,7 @@ export default function Contact() {
       <form>
         <div className="form-row">
           <div className="form-group col-md-6">
-            <label for="email">Email</label>
+            <label>Email</label>
             <input
               type="email"
               className="form-control"
@@ -18,7 +18,7 @@ export default function Contact() {
             />
           </div>
           <div className="form-group col-md-6">
-            <label for="name">Name</label>
+            <label>Name</label>
             <input
               type="name"
               className="form-control"
@@ -27,7 +27,7 @@ export default function Contact() {
             />
           </div>
           <div className="form-group">
-            <label for="message">Your message:</label>
+            <label>Your message:</label>
             <textarea className="form-control" id="message" rows="3"></textarea>
           </div>
         </div>
