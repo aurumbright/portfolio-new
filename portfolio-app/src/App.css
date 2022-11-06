@@ -1,38 +1,220 @@
-.App {
-  text-align: center;
+/* media queries! flexboxes!! */
+:root {
+  --background: #004643;
+  --headingfont: #fffffe;
+  --paragraphfont: #abd1c6;
+  --button: #f9bc60;
+  --buttonfont: #001e1d;
+  --highlight: #e16162;
+  --extracolor: #e8e4e6;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  line-height: 150%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.react-portfolio {
+  height: 100vh;
   display: flex;
   flex-direction: column;
+}
+
+body {
+  background-color: var(--background);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
+  padding: 1%;
+  color: var(--headingfont);
+  background-image: url(./assets/header-photo-1.jpg)
+}
+
+h1 {
+  display: inline-block;
+  font-size: 48px;
+  color: var(--background);
+  padding: 20px;
+}
+
+nav {
+  padding-top: 5px;
+  padding-right: 10px;
+  margin-right: 20px;
+  float: right;
+  font-size: 20px;
+  color: var(--background);
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-between;
+  min-width: 300px;
+  color: var(--highlight);
+}
+
+main {
+  padding: 20px;
+  color: var(--paragraphfont);
+}
+
+h2 {
+  font-size: 28px;
+  padding-top: 3%;
+  color: var(--highlight);
+}
+
+a {
+  color: var(--buttonfont);
+}
+
+a:hover {
+  color: var(--highlight);
+}
+
+.nav-tabs a {
+  color: var(--paragraphfont);
+}
+
+.nav-tabs a:hover {
+  color: var(--highlight);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  filter: grayscale(100%);
+  border-radius: 5px;
+}
+
+section {
+  border-bottom: 1px solid var(--highlight);
+  padding-bottom: 10px;
+  display: grid;
+  width: 100%;
+  color: var(--paragraphfont);
+}
+
+.bright {
+  background-color: var(--button);
+  margin-top: 1%;
+}
+
+.about {
+  padding: 2%;
+}
+
+.about img {
+  max-width: 25%;
+  height: auto;
+  border-radius: 50%;
+}
+
+.resume {
+  padding: 2%;
+}
+
+.resume a {
+  color: var(--highlight);
+}
+
+.work {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 450px;
+  height: auto;
+  margin: 10px;
+  border: 2px solid var(--color-four);
+  border-radius: 7px;
+}
+
+.card-header {
+  position: relative;
+  margin-top: -10px;
+  border-style: ridge;
+  border-width: 2px;
+  background-color: var(--highlight);
+  color: var(--extracolor);
+  font-weight: bolder;
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+.contact {
+  display: grid;
+  padding: 2%;
+  color: var(--highlight);
+}
+
+.contact a {
+  color: var(--highlight)
+}
+
+.contact ul {
+  display: flex;
+  justify-content: space-between;
+  min-width: 300px;
+  align-items: center;
+  margin-top: 2%;
+}
+
+.phantom {
+  display: block;
+  padding: 20px;
+  height: 100px;
+  width: 100%;
+}
+
+footer {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  min-width: 300px;
+  align-items: center;
+  color: var(--extracolor);
+  margin-top: auto;
+  background-color: var(--background);
+
 }
 
-.App-link {
-  color: #61dafb;
+img:hover {
+  transition: all 0.5s ease-in-out;
+  box-shadow: inset 0px 0px 8px var(--highlight), 0 0 15px var(--highlight);
+  filter: grayscale(0%);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media screen and (max-width: 992px) {
+  section {
+    display: flex;
+    flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
+
+  .about img {
+    max-width: 25%;
+    padding: 3%;
   }
+
+  .work {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  nav ul {
+    display: inline;
+  }
+
+  .contact ul {
+    display: block;
+  }
+
 }

@@ -3,8 +3,8 @@ import Headshot from "../../assets/headshot.jpg";
 
 export default function About() {
   return (
-    <div>
-      <h1>About Me</h1>
+    <div className="about">
+      <h2>About Me</h2>
       <img
         alt="A person with short red hair and glasses looking to the left"
         src={Headshot}

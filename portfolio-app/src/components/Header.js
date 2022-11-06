@@ -29,11 +29,17 @@ export default function Header() {
 
   return (
     <div>
-      <Navigation
-        currentPage={currentPage}
-        handlePageChange={handlePageChange}
-      />
-      {renderPage()}
+      <header>
+        <h1>Eleanor Gold</h1>
+      </header>
+      <main>
+        <Navigation
+          currentPage={currentPage}
+          handlePageChange={handlePageChange}
+        />
+        {renderPage()}
+        <div className="phantom"></div>
+      </main>
       <Footer />
     </div>
   );

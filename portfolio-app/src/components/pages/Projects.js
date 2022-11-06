@@ -48,16 +48,27 @@ export default function Projects() {
 
   return (
     <div>
-      <h1>Portfolio</h1>
-      <div id="gallery">
+      <h2>Portfolio</h2>
+      <div className="work">
         {projects.map((project) => (
           <div key={project.name}>
-            <div
-              className="card"
-              style={{ backgroundImage: `url(${project.imgsrc})` }}
-            >
-              <a href={project.link}>{project.name}</a>
-              <a href={project.repo}>Find this project on Github</a>
+            <div className="card">
+              <div className="card-body">
+                <h5 className="card-title">
+                  <a href={project.link}>{project.name}</a>
+                </h5>
+                <p>
+                  <a href={project.repo}>Find this project on Github</a>
+                </p>
+
+                <a href={project.link}>
+                  <img
+                    className="card-img-bottom"
+                    src={project.imgsrc}
+                    alt="a screenshot of the project"
+                  />
+                </a>
+              </div>
             </div>
           </div>
         ))}
