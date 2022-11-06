@@ -1,45 +1,93 @@
-import React from "react";
-
-// Test copy
+import React, { useState } from "react";
+import { validateEmail } from "../../utils/helpers";
 
 export default function Contact() {
+  const [personName, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const handleInputChange = (e) => {
+    const { target } = e;
+    const inputType = target.name;
+    const inputValue = target.value;
+
+    if (inputType === "email") {
+      setEmail(inputValue);
+    } else if (inputType === "personName") {
+      setName(inputValue);
+    } else if (inputType === "message") {
+      setMessage(inputValue);
+    }
+  };
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+
+    if (!validateEmail(email) || !personName || !message) {
+      setErrorMessage("Email or name or message is invalid");
+      return;
+    }
+
+    setEmail("");
+    setName("");
+    setMessage("");
+  };
+
   return (
     <div className="contact">
       <h2>Contact</h2>
       <div>
-        <form>
+        <form className="form">
           <div className="form-row">
             <div className="form-group col-md-6">
               <label>Email</label>
               <input
+                value={email}
+                name="email"
                 type="email"
-                className="form-control"
-                id="email"
                 placeholder="Email"
+                onChange={handleInputChange}
+                className="form-control"
               />
             </div>
             <div className="form-group col-md-6">
               <label>Name</label>
               <input
-                type="name"
-                className="form-control"
-                id="name"
+                value={personName}
+                name="personName"
+                type="text"
                 placeholder="Name"
+                onChange={handleInputChange}
+                className="form-control"
               />
             </div>
             <div className="form-group">
               <label>Your message:</label>
               <textarea
-                className="form-control"
-                id="message"
+                value={message}
+                name="message"
+                type="text"
                 rows="3"
+                onChange={handleInputChange}
+                className="form-control"
               ></textarea>
             </div>
           </div>
-          <button type="submit" className="btn bright">
-            Sign in
+          <button
+            type="submit"
+            className="btn bright"
+            onClick={handleFormSubmit}
+          >
+            Send
           </button>
         </form>
+        {errorMessage && (
+          <div>
+            <p className="error-text">{errorMessage}</p>
+          </div>
+        )}
       </div>
       <div className="container">
         <ul>
