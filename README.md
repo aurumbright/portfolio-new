@@ -8,6 +8,8 @@ The portfolio includes multiple tabs rendering an about page, a portfolio page, 
 
 The page adapts to screen sizes, moving links to a more easily-viewed list view and moving the items in each section to block display as the screen size shrinks.
 
+The app an be viewed live [here](https://aurumbright.github.io/portfolio-new/).
+
 ## Mock-Up
 
 The following animation shows the web application's appearance and functionality:
